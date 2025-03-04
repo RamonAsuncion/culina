@@ -48,7 +48,7 @@ void display_table(WINDOW *win, sqlite3 *db, const char *sql_query)
 {
   sqlite3_stmt *stmt;
   int rc;
-  int row = 0;
+  // int row = 0;
 
   rc = sqlite3_prepare_v2(db, sql_query, -1, &stmt, NULL);
   if (rc != SQLITE_OK) {
@@ -57,7 +57,7 @@ void display_table(WINDOW *win, sqlite3 *db, const char *sql_query)
     return;
   }
 
-  int num_cols = sqlite3_column_count(stmt);
+  // int num_cols = sqlite3_column_count(stmt);
 
   /**
     * TODO: Get a table.
@@ -243,23 +243,10 @@ int main(void)
   // TODO: top left add current window size (limit how small you can go)
   // this should constantly be updating
 
-  int max_x, max_y;
+  // int max_x, max_y;
   int ch;
   while ((ch = tolower(wgetch(window)))) {
-    //if (ch == KEY_RESIZE) {
-    //  delwin(window);
-    //  window = setup_window();
-    //  display_title(window);
-    //  display_menu(window, selected_menu_item);
-    //  clear();
-    //  refresh();
-    //  continue;
-    //}
-
-    //getmaxyx(stdscr, max_y, max_x);
-    //mvprintw(0, 0, "Size: %dx%d ", max_x, max_y);
-    //refresh();
-
+    // TODO: Resize the window on change.
     switch (ch) {
       case 's': // show
         selected_menu_item = 0;

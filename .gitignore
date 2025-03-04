@@ -1,4 +1,7 @@
-**/*.db
+*.db
 bin/
 obj/
 database/
+*
+!/**/
+!*.*
