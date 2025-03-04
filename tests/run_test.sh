@@ -22,6 +22,6 @@ compile "forum" "forum.c" "-lncurses -lpanel"
 
 run_program "forum"
 
-cleanup "attrstest"
-cleanup "window"
-cleanup "forum"
+#cleanup "attrstest"
+#cleanup "window"
+#cleanup "forum"
