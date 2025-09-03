@@ -38,7 +38,7 @@ WINDOW *setup_window()
   top_x = 2;
 
   WINDOW *win = newwin(bottom_y, bottom_x, top_y, top_x);
-  box(win, 0, 0);
+  box(win, ACS_VLINE, ACS_HLINE);
   wrefresh(win);
 
   return win;
@@ -124,9 +124,9 @@ bool confirm_exit(WINDOW *win)
 
   WINDOW *exit_win = newwin(box_height, box_width, start_y, start_x);
   PANEL *exit_panel = new_panel(exit_win);
-  box(exit_win, 0, 0);
+  box(exit_win, ACS_VLINE, ACS_HLINE);
 
-  const char *question = "Are you sure you want to exit?";
+  const char question[] = "Are you sure you want to exit?";
   int question_x = (box_width - strlen(question)) / 2;
   mvwprintw(exit_win, 1, question_x, question);
 
